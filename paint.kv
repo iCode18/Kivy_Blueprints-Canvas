@@ -1,0 +1,11 @@
+<CanvasWidget>:
+    Button:
+        text : '[b]Delete[/b]'
+        right: root.right -10
+        top: root.top -20
+        width: 80
+        height: 40
+        background_normal : 'delete_normal.png'
+        background_down : 'delete_pressed.png'
+        markup: True
+        on_release: root.clear_canvas()
