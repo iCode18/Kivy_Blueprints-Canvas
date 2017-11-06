@@ -1,5 +1,5 @@
 #:import C kivy.utils.get_color_from_hex
-from kivy.utils import get_color_from_hex as C
+#from kivy.utils import get_color_from_hex as C
 <ColorButton@RadioButton>:
     group: 'color'
     on_release: app.canvas_widget.set_color(self.background_color)
@@ -25,7 +25,7 @@ from kivy.utils import get_color_from_hex as C
         x:0
         y:0
         width:root.width
-        halign:40
+        height:40
 
         ColorButton:
             background_color: C('#2980b9')
@@ -34,3 +34,63 @@ from kivy.utils import get_color_from_hex as C
             background_color: C('#16A085')
         ColorButton:
             background_color : C('#27AE60')
+        ColorButton:
+            background_color : C('#df9563')
+        ColorButton:
+            background_color : C('#ffdc73')
+        ColorButton:
+            background_color : C('#ff7373')
+        ColorButton:
+            background_color : C('#ffff00')
+        ColorButton:
+            background_color : C('#00bfff')
+        ColorButton:
+            background_color: C('#001933')
+        ColorButton:
+            background_color: C('#e0e0e0')
+        ColorButton:
+            background_color : C('#3399cc')
+        ColorButton:
+            background_color : C('#687b5a')
+        ColorButton:
+            background_color : C('#3b5998')
+        ColorButton:
+            background_color : C('#55505a')
+        ColorButton:
+            background_color : C('#ffdc73')
+        ColorButton:
+            background_color : C('#c2f2d0')
+    BoxLayout:
+        orientation:'vertical'
+        padding:2
+        spacing:2
+        x:0
+        top:root.top-20
+        width:80
+        halign:110
+
+        LineWidthButton:
+            text:'Thin'
+            background_normal : 'Thick_normal.png'
+            background_down : 'Thick_down.png'
+            bold:True
+
+        LineWidthButton:
+            text:'Normal'
+            state: 'down'
+            background_normal : 'Thick_normal.png'
+            background_down : 'Thick_down.png'
+            bold:True
+
+        LineWidthButton:
+            text:'Thick'
+            background_normal : 'Thick_normal.png'
+            background_down : 'Thick_down.png'
+            bold:True
+
+
+<LineWidthButton@ColorButton>:
+    group: 'line_width'
+    on_release: app.canvas_widget.set_line_width(self.text)
+    color : C('#2C3E50')
+    background_color: C('#ECF0F1')
